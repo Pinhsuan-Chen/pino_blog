@@ -1,3 +1,5 @@
+
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -5,8 +7,17 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    {
+  `gatsby-plugin-react-helmet`,
+  `gatsby-plugin-catch-links`,
+  `gatsby-transformer-remark`,
+  {      resolve: `gatsby-source-filesystem`,
+    options: {
+     path: `$pino_blog/src/pages`,
+     name: 'pages',
+   },
+ }
+
+     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -30,5 +41,5 @@ module.exports = {
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
-}
+    ],
+  }
